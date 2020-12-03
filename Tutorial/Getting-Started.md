@@ -12,11 +12,11 @@ If you don't have Android Studio installed, you can install the latest version [
 
 Once you have Android Studio installed, you need to install the Flutter and Dart plugins in Android Studio.
 To do that, click the Configure and then Plugins on the main screen:
-![Plugin](Images/HomeToPlugin)
+![Plugin](Images/HomeToPlugin.png)
 
 Alternatively, if you already have a project open you can access it by going to File > Settings > Plugins:
 ![File Menu](Images/FileScreen.png)
-![Plugin Menu](Images/PluginInProject.png)
+![Plugin Menu](Images/PluginInProject.PNG)
 
 After doing that you should see Plugins appear when you select the Marketplace tab.
 
@@ -25,7 +25,7 @@ To do this, go to the settings gear and click HTTP Proxy Settings...
 ![Proxy Settings](Images/ProxySettings.png)
 
 Then select Auto-detect proxy settings, check the checkbox, and put this link in the text box: https://plugins.jetbrains.com/
-![Auto Detect](Images/AutoDetect.png)
+![Auto Detect](Images/AutoDetect.PNG)
 Then click OK.
 
 To find Flutter in the Marketplace, type it in the search bar and select it from the side menu.
