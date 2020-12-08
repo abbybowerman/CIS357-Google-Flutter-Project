@@ -17,9 +17,9 @@ Next, create a random number function:
 ## Change title and theme
 To do this, you will need to change certain aspects under Widget build(BuildContext context) function.   
 ![titletheme](Images/ChangeThemeColor.PNG)   
-Further explanation:
-title is the name of the app
-primarySwatch changes the theme color
+Further explanation:   
+title is the name of the app   
+primarySwatch changes the theme color   
 the title attribute in home: MyHomePage is the name that's displayed on the top of the screen
 
 ## Run the app
