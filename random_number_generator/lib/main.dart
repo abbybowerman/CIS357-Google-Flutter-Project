@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:math';
 
 void main() {
   runApp(MyApp());
@@ -9,7 +10,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'CIS 357 Project',
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -20,13 +21,13 @@ class MyApp extends StatelessWidget {
         // or simply save your changes to "hot reload" in a Flutter IDE).
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.red,
         // This makes the visual density adapt to the platform that you run
         // the app on. For desktop platforms, the controls will be smaller and
         // closer together (more dense) than on mobile platforms.
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(title: 'Random Number Generator'),
     );
   }
 }
@@ -51,6 +52,8 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
+  final lowController = TextEditingController();
+  final highController = TextEditingController();
 
   void _incrementCounter() {
     setState(() {
@@ -60,6 +63,16 @@ class _MyHomePageState extends State<MyHomePage> {
       // _counter without calling setState(), then the build method would not be
       // called again, and so nothing would appear to happen.
       _counter++;
+    });
+  }
+  void _randomNumber() {
+    setState(() {
+      Random rand = new Random();
+      //These are placeholders
+      int min = 4;
+      int max = 10;
+      
+      int result = rand.nextInt(max - min) + min;
     });
   }
 
@@ -98,11 +111,28 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              'You have pushed the button this many times:',
+              'Random number generator',
+            ),
+            TextField(
+              decoration: InputDecoration(
+                hintText: 'Low'
+              ),
+            ),
+            TextField(
+              decoration: InputDecoration(
+                hintText: 'High'
+              ),
+            ),
+            FlatButton(
+              onPressed: () {
+
+              },
+              child: Text(
+                'Calculate'
+              ),
             ),
             Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
+              'Result'
             ),
           ],
         ),
