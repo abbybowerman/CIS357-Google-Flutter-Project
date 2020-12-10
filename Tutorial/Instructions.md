@@ -8,6 +8,19 @@ Then, make sure an SDK is selected:
 ![SDK](Images/ProjectSDK.PNG)
 
 ## Create a layout
+The code for the entire layout is this:    
+![layout1](Images/LayoutPart1.PNG)   
+![layout2](Images/LayoutPart2.PNG)   
+This is under the Widget build (BuildContext context){} method.   
+It's put into a column, which is center alligned.
+Other elements:
+* children is everything that goes within the column
+* Text is similar to a TextView in Android Studio
+* TextField is like the TextField in Android Studio
+* A FlatButton is a button
+More about the TextFields:
+* The controller is what allows the text in the text field to be accessed in another function
+* The Padding can be added after the TextField is created by clicking on TextFiled, pressing Alt + Enter (Option + Return on Mac) and selecting 'wrap in padding'   
 
 ## Add logic for the button
 First, import 'dart:math' to generate random numbers:   

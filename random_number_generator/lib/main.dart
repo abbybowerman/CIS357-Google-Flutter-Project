@@ -72,64 +72,50 @@ class _MyHomePageState extends State<MyHomePage> {
         int min = int.parse(strMin);
         int max = int.parse(strMax);
 
-        //Computes the random number and stores it
-        int result = rand.nextInt(max - min) + min;
-        //Sets the result to the text
-        resultText.text = result.toString();
+        //Checks to make sure max isn't smaller than min
+        if(min > max){
+          resultText.text = "Maximum must be greater than minimum";
+        }else{
+          //Computes the random number and stores it
+          int result = rand.nextInt(max - min + 1) + min;
+          //Sets the result to the text
+          resultText.text = result.toString();
+        }
       }catch(FormatException){ //catches formatting errors from parsing
         resultText.text = "Invalid inputs";
       }
-
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
     return Scaffold(
       appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
       body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
         child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Invoke "debug painting" (press "p" in the console, choose the
-          // "Toggle Debug Paint" action from the Flutter Inspector in Android
-          // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
-          // to see the wireframe for each widget.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
               'Random number generator',
             ),
-            TextField(
-              controller: lowController,
-              decoration: InputDecoration(
-                hintText: 'Low'
+            Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: TextField(
+                controller: lowController,
+                decoration: InputDecoration(
+                  hintText: 'Low'
+                ),
               ),
             ),
-            TextField(
-              controller: highController,
-              decoration: InputDecoration(
-                hintText: 'High'
+            Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: TextField(
+                controller: highController,
+                decoration: InputDecoration(
+                  hintText: 'High'
+                ),
               ),
             ),
             FlatButton(
@@ -140,8 +126,11 @@ class _MyHomePageState extends State<MyHomePage> {
                 'Calculate'
               ),
             ),
-            TextField(
-              controller: resultText
+            Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: TextField(
+                controller: resultText
+              ),
             ),
           ],
         ),
