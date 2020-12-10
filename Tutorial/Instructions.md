@@ -11,8 +11,18 @@ Then, make sure an SDK is selected:
 
 ## Add logic for the button
 First, import 'dart:math' to generate random numbers:   
-![import](Images/Import.PNG)   
+![import](Images/Import.PNG)    
+Next, add the controllers from the text fields so the values can be grabbed:   
+![controllers](Images/Controllers.PNG)    
 Next, create a random number function:   
+![function](Images/RandomFunction.PNG)    
+The comments should help explain but here's a rundown:   
+* First create a new instance of Random()   
+* Grab the string values from the low and high text fields using the controllers   
+* Convert the string values to int values and put it in a try block   
+* Compute the result from random   
+* Set that result to a string   
+* Otherwise, if non-numeric values are entered, catch a FormatException   
 
 ## Change title and theme
 To do this, you will need to change certain aspects under Widget build(BuildContext context) function.   
@@ -25,3 +35,4 @@ the title attribute in home: MyHomePage is the name that's displayed on the top 
 ## Run the app
 
 ## Hot reload
+Video will be here

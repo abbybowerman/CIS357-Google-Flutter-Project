@@ -51,28 +51,35 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
   final lowController = TextEditingController();
   final highController = TextEditingController();
+  final resultText = TextEditingController();
 
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
   void _randomNumber() {
     setState(() {
+      //Create an instance of Random()
       Random rand = new Random();
-      //These are placeholders
-      int min = 4;
-      int max = 10;
-      
-      int result = rand.nextInt(max - min) + min;
+
+      //The strings grab the text from the low and high text fields respectively
+      String strMin = lowController.text;
+      String strMax = highController.text;
+
+      //This is in a try block in case the user tries to non numeric values
+      try{
+        //Takes the string values from the text fields and converts them
+        //to integers
+        //This will catch errors if non numeric values are entered
+        int min = int.parse(strMin);
+        int max = int.parse(strMax);
+
+        //Computes the random number and stores it
+        int result = rand.nextInt(max - min) + min;
+        //Sets the result to the text
+        resultText.text = result.toString();
+      }catch(FormatException){ //catches formatting errors from parsing
+        resultText.text = "Invalid inputs";
+      }
+
     });
   }
 
@@ -114,34 +121,31 @@ class _MyHomePageState extends State<MyHomePage> {
               'Random number generator',
             ),
             TextField(
+              controller: lowController,
               decoration: InputDecoration(
                 hintText: 'Low'
               ),
             ),
             TextField(
+              controller: highController,
               decoration: InputDecoration(
                 hintText: 'High'
               ),
             ),
             FlatButton(
               onPressed: () {
-
+                _randomNumber();
               },
               child: Text(
                 'Calculate'
               ),
             ),
-            Text(
-              'Result'
+            TextField(
+              controller: resultText
             ),
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
