@@ -18,6 +18,7 @@ Other elements:
 * Text is similar to a TextView in Android Studio
 * TextField is like the TextField in Android Studio
 * A FlatButton is a button   
+   
 More about the TextFields:   
 * The controller is what allows the text in the text field to be accessed in another function
 * The Padding can be added after the TextField is created by clicking on TextFiled, pressing Alt + Enter (Option + Return on Mac) and selecting 'wrap in padding'   
@@ -43,9 +44,10 @@ To do this, you will need to change certain aspects under Widget build(BuildCont
 Further explanation:   
 title is the name of the app   
 primarySwatch changes the theme color   
-the title attribute in home: MyHomePage is the name that's displayed on the top of the screen
+the title attribute in home: MyHomePage is the name that's displayed on the top of the screen  
 
-## Run the app
 
 ## Hot reload
-Video will be here
+If you've made changes to the app while it's running, you can click this button:   
+![hotreload](Images/HotReload.PNG)   
+and the app will display with the new changes.

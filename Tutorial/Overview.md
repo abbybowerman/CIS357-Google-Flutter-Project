@@ -8,6 +8,7 @@ According to the flutter.dev website, Google Flutter is for building apps that c
 
 ## Demo App
 
-The app written to demonstarte these features is a random number generator. The app is in this github repository and a link can be found here. (ADD LINK) It takes a low input and a high input in text boxes and then calculates a random number when the button is clicked.
-
-### Screenshots
+The app written to demonstarte these features is a random number generator. The app is in this github repository and a link can be found [here](https://github.com/abbybowerman/CIS357-Google-Flutter-Project). It takes a low input and a high input in text boxes and then calculates a random number when the button is clicked.   
+   
+Screenshot of the app:   
+![app](Images/App.PNG)
